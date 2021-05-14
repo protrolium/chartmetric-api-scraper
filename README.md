@@ -1,2 +1,3 @@
 # chartmetric-api-scraper
-## JSON > CSV workflow with python and batch API calls with bash
+### bash, jq, python
+using bash and jq to scrape & filter returned JSON objects from API, then segmenting out into modularized CSV tables.
