@@ -47,13 +47,3 @@ for i in *.json; \
         }' \
   > ../filtered-json/"${i%}"; \
 done
-
-# cat 2-Chainz.json | jq '.[] | {"obj": [.[0], .[1]]}'
-
-# cat 2-Chainz.json | jq '.[] | {"obj": [ [.[0] | .name], [. [1] | .name], .[2] ] }'
-
-# cat 2-Chainz.json | jq '.[] | {"obj": [ .[:20]]}'
-
-# get all names in a range
-# cat 2-Chainz.json | jq '.[] | {"obj": [ [.[:30] | .[].name  ] ] }'
-# cat 2-Chainz.json | jq '.[] | {"obj": [ [.[:30] | .[] | {"name": .name}  ] ] }'
