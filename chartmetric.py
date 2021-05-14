@@ -1,4 +1,5 @@
 #!/usr/local/bin/python3
+
 import os
 import re
 import csv
@@ -6,8 +7,15 @@ import sys
 import json
 
 #run ./chartmetric.py file_to_parse.json out_putdir
-#for batch
-#run find ./ -maxdepth 1 -type f -name "*.json" -exec ./chartmetric.py "{}" ../../temp \;
+
+# for batch
+# $ find ./ -maxdepth 1 -type f -name "*.json" -exec ./chartmetric.py "{}" ../../temp \;
+
+# merge CSV of type
+# $ awk 'FNR == 1 && NR!=1{next;}{print}' *_metric.csv > merged.csv
+
+# alternate method
+# $ find ./ -name *the_metrics.csv -exec sh -c "cat {} | tail -n +2 >> /tmp/big_metric.csv"\;
 
 if len(sys.argv) < 3:
     sys.exit("chartmetric.py artist_name out_dir")

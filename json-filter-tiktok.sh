@@ -9,6 +9,8 @@ for i in *.json; \
         "engagement rate": .engagement_rate,
         "followers": .followers,
         "avg likes per post": .avg_likes_per_post,
-        "avg comments per post": .avg_commments_per_post}}' \
+        "avg comments per post": .avg_commments_per_post
+      }
+    }' \
   > ../filtered-json/"${i%}"; \
 done

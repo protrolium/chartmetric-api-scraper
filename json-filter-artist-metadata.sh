@@ -13,6 +13,8 @@ for i in *.json; \
       "current_city": .current_city,
       "current_city_id": .current_city_id,
       "band_members": .band_members,
-      "description": .description}}' \
+      "description": .description
+    }
+  }' \
    > ../filtered-json/"${i%}"; \
  done
