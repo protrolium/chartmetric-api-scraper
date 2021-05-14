@@ -37,6 +37,3 @@ for i in *.json; \
         }' \
   > ../filtered-json/"${i%}"; \
 done
-
-
-# for i in *.json; do cat "$i" | jq '.[] | [{"top_countries": .top_countries, "audience_genders_per_age": .audience_genders_per_age, "audience_ethnicities": .audience_ethnicities, "audience_genders": .audience_genders, "audience_brand_affinities": .audience_brand_affinities, "audience_interests": .audience_interests, "engagement_rate": .engagement_rate, "is_verified": .is_verified}]' > filtered-json/"${i%}"; done

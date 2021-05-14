@@ -79,25 +79,3 @@ for metric_type in cm_obj['obj'].keys():
             csv_writer.writerow(row)
 
 print(cm_json_file)
-
-# def isListEmpty(header_list):
-#     if isinstance(cm_obj['obj'][metric_type], (list)):
-#         return all( map(isListEmpty, header_list) )
-#         #handle if the record type is a list
-#         #get the header from the keys of the 'metric_type' and write it as the first row
-#         header_list = list(cm_obj['obj'][metric_type][0].keys())
-#         #add 'artist' to the begining of the header
-#         header_list.insert(0,'artist')
-#         csv_writer.writerow(header_list)
-#         for metric_rec in cm_obj['obj'][metric_type]:
-#             #add artist name to the metric values and dump it out to the csv
-#             values = list(metric_rec.values())
-#             values.insert(0,artist)
-#             csv_writer.writerow(values)
-#         return False # Not a list
-#     else:
-#         #it's one of those non array types so we just make arrays and dump em
-#         header_list = ['artist',metric_type]
-#         csv_writer.writerow(header_list)
-#         row = [artist,cm_obj['obj'][metric_type]]
-#         csv_writer.writerow(row)
