@@ -44,6 +44,7 @@ artist = os.path.basename(cm_json_file).rsplit( ".", 1 )[0]
 with open(cm_json_file, 'r') as cm_json:
     data=cm_json.read()
 
+
 cm_obj= json.loads(data)
 
 
