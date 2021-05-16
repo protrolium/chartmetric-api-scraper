@@ -9,7 +9,7 @@ import json
 #run ./chartmetric.py file_to_parse.json out_putdir
 
 # for batch
-# $ find ./ -maxdepth 1 -type f -name "*.json" -exec ./chartmetric.py "{}" ../../temp \;
+# $ find ./ -maxdepth 1 -type f -name "*.json" -exec ./chartmetric-neighboringArtists.py "{}" ../../temp \;
 
 # merge CSV of type
 # $ awk 'FNR == 1 && NR!=1{next;}{print}' *_metric.csv > merged.csv
@@ -47,7 +47,7 @@ with open(cm_json_file, 'r') as cm_json:
 cm_obj = json.loads(data)
 
 #itterate over everything in "obj" keys
-for metric_type in cm_obj['obj'].keys():
+for metric_type in cm_obj['obj'][0].keys():
 
 
     #first we make the file name for the csv it is a combination of artist_metric name
@@ -67,14 +67,14 @@ for metric_type in cm_obj['obj'].keys():
 
 
         #https://bytes.com/topic/python/answers/474711-how-determine-object-scriptable
-        if isinstance(cm_obj['obj'][metric_type], (list)):
+        if isinstance(cm_obj['obj'][0][metric_type], (list)):
             #handle if the record type is a list
             #get the header from the keys of the 'metric_type' and write it as the first row
-            header_list = list(cm_obj['obj'][metric_type][0].keys())
+            header_list = list(cm_obj['obj'][0].keys())
             #add 'artist' to the begining of the header
             header_list.insert(0,'artist')
             csv_writer.writerow(header_list)
-            for metric_rec in cm_obj['obj'][metric_type]:
+            for metric_rec in cm_obj['obj'][0][metric_type]:
                 #add artist name to the metric values and dump it out to the csv
                 values = list(metric_rec.values())
                 values.insert(0,artist)
@@ -83,7 +83,7 @@ for metric_type in cm_obj['obj'].keys():
             #it's one of those non array types so we just make arrays and dump em
             header_list = ['artist',metric_type]
             csv_writer.writerow(header_list)
-            row = [artist,cm_obj['obj'][metric_type]]
+            row = [artist,cm_obj['obj'][0][metric_type]]
             csv_writer.writerow(row)
 
 print(cm_json_file)
