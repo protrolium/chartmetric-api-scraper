@@ -4,9 +4,9 @@
 # `$ fg` to resume
 # `$ bash -x scriptname` to view printout of commands as they run
 
-artistId=artist-id-complete.txt
-artistName=artist-name-complete.txt
-tokenAuth=token.txt
+artistId=var/artist-id-complete.txt
+artistName=var/artist-name-complete.txt
+tokenAuth=var/token.txt
 
 # id array
 declare -a id
