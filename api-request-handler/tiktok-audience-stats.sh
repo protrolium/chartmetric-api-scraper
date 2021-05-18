@@ -26,7 +26,7 @@ for ((i=0; i<${#id[@]}; i++)); do
 
   # curl command
   curl -H "Authorization: Bearer $token" https://api.chartmetric.com/api/artist/${id[$i]}/tiktok-audience-stats \
-  -o tiktok-audience-stats/${art[$i]}.json;
+  -o ../data/tiktok-audience-stats/${art[$i]}.json;
 
   # print the saved output and display last portion of token string
   echo "Saving ${art[$i]} at id: ${id[$i]} with token: ${token: -9}";

@@ -3,12 +3,12 @@ for i in *.json; \
   | jq \
    '.[]
    | {"obj":
-      {"id": .id,
+      {"artist_id": .id,
       "name": .name,
       "code2": .code2,
       "gender": .gender,
       "isni": .isni,
-      "cm_artist_rank": .sm_artist_rank,
+      "cm_artist_rank": .cm_artist_rank,
       "hometown_city": .hometown_city,
       "current_city": .current_city,
       "current_city_id": .current_city_id,

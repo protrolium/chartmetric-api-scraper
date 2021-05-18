@@ -8,7 +8,6 @@ awk 'FNR == 1 && NR!=1{next;}{print}' *_latest_album_release_date.csv > merged/m
 awk 'FNR == 1 && NR!=1{next;}{print}' *_latest_album_upc.csv > merged/merged_latest_album_upc.csv &&
 awk 'FNR == 1 && NR!=1{next;}{print}' *_name.csv > merged/merged_name.csv &&
 awk 'FNR == 1 && NR!=1{next;}{print}' *_position.csv > merged/merged_position.csv &&
-awk 'FNR == 1 && NR!=1{next;}{print}' *_rank.csv > merged/merged_rank.csv &&
 awk 'FNR == 1 && NR!=1{next;}{print}' *_soundcloud_followers.csv > merged/merged_soundcloud_followers.csv &&
 awk 'FNR == 1 && NR!=1{next;}{print}' *_spotify_followers_to_listener_ratio.csv > merged/merged_spotify_followers_to_listener_ratio.csv &&
 awk 'FNR == 1 && NR!=1{next;}{print}' *_spotify_followers.csv > merged/merged_followers.csv &&
