@@ -2,7 +2,7 @@ for i in *.json; \
   do cat "$i" \
     | jq '.[]
       | {"obj":
-          {"related artists": .[:29]
+          {"neighboring artists": .[:29]
             | [.[]
               | { "rank": .rank,
                   "name": .name,
